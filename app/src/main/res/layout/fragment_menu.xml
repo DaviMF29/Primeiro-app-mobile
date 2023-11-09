@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".menu"
+    android:background="@color/grey_blue">
+
+    <FrameLayout
+        android:id="@+id/layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/balao_user"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/circle"
+            android:textSize="18sp"
+            android:text="D"
+            android:gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp">
+        </TextView>
+        <TextView
+            android:id="@+id/name_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="user"
+            android:layout_toRightOf="@id/balao_user"
+            android:layout_alignTop="@id/balao_user"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp">
+        </TextView>
+        <TextView
+            android:id="@+id/ver_perfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver Perfil >"
+            android:layout_toRightOf="@id/balao_user"
+            android:layout_below="@id/name_user"
+            android:textSize="10sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="#6771FB">
+        </TextView>
+
+    </RelativeLayout>
+
+    </FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_below="@id/layout_1"/>
+    <FrameLayout
+        android:id="@+id/layout_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_below="@id/layout_1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/opcoes">
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+</RelativeLayout>

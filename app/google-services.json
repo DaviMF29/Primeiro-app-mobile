@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "826144862695",
+    "project_id": "projeto-champions",
+    "storage_bucket": "projeto-champions.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826144862695:android:59d5890aa008d320204d42",
+        "android_client_info": {
+          "package_name": "com.example.sistemalogin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALTM9D763fRZU2P-68g-vgfNwIQuiFLHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

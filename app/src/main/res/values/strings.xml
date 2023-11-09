@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">App_Champions</string>
+    <string name="entrar">Entrar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="text_cadastro">Não tem conta? Clique aqui</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="nome_barcelona">Barcelona</string>
+    <string name="nome_ajax">Ajax</string>
+    <string name="nome_city">City</string>
+
+
+    <!-- Headings -->
+    <string name="desc_barcelona">Clube catalão</string>
+    <string name="desc_ajax">Clube holandês</string>
+    <string name="desc_city">Clube inglês</string>
+
+    <string name="qtd_barcelona">5</string>
+    <string name="qtd_ajax">4</string>
+    <string name="qtd_city">1</string>
+
+    <!-- User -->
+    <string name="user_DaviMF">@DaviMF</string>
+
+
+    <!-- opcoes do menu -->
+    <string name="Sobre">Sobre</string>
+    <string name="Novidades">Novidades</string>
+    <string name="Comente">Comente</string>
+    <string name="Configuracoes">Configurações</string>
+</resources>

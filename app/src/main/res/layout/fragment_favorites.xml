@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".favorites">
+
+
+
+    <RelativeLayout
+        android:id="@+id/relative_fav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_clubes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/navigation_jogadores"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            app:menu="@menu/fav_clubes">
+        </com.google.android.material.navigation.NavigationView>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigation_jogadores"
+            app:layout_constraintStart_toEndOf="@id/navigation_clubes"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_toRightOf="@id/navigation_clubes"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            app:menu="@menu/fav_jogador">
+
+        </com.google.android.material.navigation.NavigationView>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/relative_fav">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_clubes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/clubes">
+        </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

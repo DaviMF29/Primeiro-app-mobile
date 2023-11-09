@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:layout_width="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".form_login"
+    android:background="@drawable/background">
+
+
+    <ImageView
+        android:id="@+id/logo_champions"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/champa"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </ImageView>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/components"
+        style="@style/container_components"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_champions">
+    </androidx.viewpager.widget.ViewPager>
+    <EditText
+        android:textColorHint="@color/black"
+        android:textColor="@android:color/black"
+        android:id="@+id/edit_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@id/components"
+        app:layout_constraintEnd_toEndOf="@id/components"
+        app:layout_constraintTop_toTopOf="@id/components"
+        android:hint="Email"
+        android:drawableRight="@drawable/baseline_email_24"
+        style="@style/edit_text">
+    </EditText>
+    <EditText
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/black"
+        android:id="@+id/edit_password"
+        android:inputType="textPassword"
+        app:layout_constraintStart_toStartOf="@id/components"
+        app:layout_constraintEnd_toEndOf="@id/components"
+        app:layout_constraintTop_toBottomOf="@id/edit_email"
+        android:hint="Password"
+        android:drawableRight="@drawable/baseline_remove_red_eye_24"
+        style="@style/edit_text">
+    </EditText>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botao_entrar"
+        style="@style/button"
+        android:text="@string/entrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_password">
+
+    </androidx.appcompat.widget.AppCompatButton>
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/components"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible">
+    </ProgressBar>
+    <TextView
+        android:id="@+id/text_telaCadastro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_cadastro"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar">
+
+    </TextView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

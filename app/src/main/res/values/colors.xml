@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="orange">#FFB334</color>
+    <color name="pink">#FB528B</color>
+    <color name="pinklight"></color>
+    <color name="azul">#2E348C</color>
+    <color name="azulintermediatio">#040E66 </color>
+    <color name="azulescuro">#06113E</color>
+    <color name="grey">#5A5A5A</color>
+    <color name ="grey_blue">#4A4968</color>
+    <color name = "red">#FF0000</color>
+</resources>

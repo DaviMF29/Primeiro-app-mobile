@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".form_cadastro"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/text_cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Cadastre-se"
+        android:textSize="60dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp">
+
+    </TextView>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/container_cadastro"
+        style="@style/container_components"
+        android:layout_height="335dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_cadastrar"
+        android:contentDescription =" ">
+
+    </androidx.viewpager.widget.ViewPager>
+
+    <EditText
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/black"
+        android:id="@+id/cadastrar_nome"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@id/container_cadastro"
+        app:layout_constraintEnd_toEndOf="@id/container_cadastro"
+        app:layout_constraintTop_toTopOf="@id/container_cadastro"
+        android:hint="Nome"
+        style="@style/edit_text">
+    </EditText>
+    <EditText
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/black"
+        android:id="@+id/cadastar_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@id/container_cadastro"
+        app:layout_constraintEnd_toEndOf="@id/container_cadastro"
+        app:layout_constraintTop_toBottomOf="@id/cadastrar_nome"
+        android:hint="Email"
+        android:drawableRight="@drawable/baseline_email_24"
+        style="@style/edit_text">
+    </EditText>
+    <EditText
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/black"
+        android:id="@+id/cadastrar_senha"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@id/container_cadastro"
+        app:layout_constraintEnd_toEndOf="@id/container_cadastro"
+        app:layout_constraintTop_toBottomOf="@id/cadastar_email"
+        android:hint="Senha"
+        android:drawableRight="@drawable/baseline_remove_red_eye_24"
+        style="@style/edit_text">
+    </EditText>
+    <EditText
+        android:textColor="@android:color/black"
+        android:textColorHint="@color/black"
+        android:id="@+id/confirmacao_senha"
+        android:inputType="textEmailAddress"
+        app:layout_constraintStart_toStartOf="@id/container_cadastro"
+        app:layout_constraintEnd_toEndOf="@id/container_cadastro"
+        app:layout_constraintTop_toBottomOf="@id/cadastrar_senha"
+        android:hint="Confirmar senha"
+        style="@style/edit_text">
+    </EditText>
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/botao_cadastrar"
+        style="@style/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_cadastro"
+        android:layout_marginTop="35dp"
+        android:text="@string/cadastrar">
+    </androidx.appcompat.widget.AppCompatButton>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/champa_"
+        app:layout_constraintEnd_toEndOf="@+id/botao_cadastrar"
+        app:layout_constraintTop_toTopOf="@id/botao_cadastrar"
+        app:layout_constraintBottom_toBottomOf="@id/botao_cadastrar"
+        android:id="@+id/logo_champions_cadastrar"
+        android:elevation="2dp">
+    </ImageView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
