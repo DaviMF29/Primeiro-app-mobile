@@ -1,10 +1,12 @@
 package com.example.sistemalogin
 
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.widget.EditText
 import android.widget.ProgressBar
@@ -19,15 +21,15 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class form_login : AppCompatActivity() {
+
+    private var nomeUsuarioListener: nomeUsuarioListener? = null
+
     private lateinit var auth: FirebaseAuth
-    private lateinit var nome_user: TextView
     private lateinit var text_telaCadastro: TextView
     private lateinit var botoao_login: AppCompatButton
     private lateinit var edit_email: EditText
     private lateinit var edit_senha: EditText
-//    private lateinit var db: FirebaseFirestore
-    private lateinit var userID: String
-    private lateinit var documentReference: DocumentReference
+
 
     //private lateinit var progressBar : ProgressBar
     val mensagens = arrayOf(
@@ -43,6 +45,9 @@ class form_login : AppCompatActivity() {
         setContentView(R.layout.activity_form_login)
         iniciarComponentes()
         auth = Firebase.auth
+
+
+
 
 
         supportActionBar?.hide()
@@ -95,39 +100,13 @@ class form_login : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+//        val intent = Intent(this, MainActivity::class.java)
+//        startActivity(intent)
+//        finish()
 
-        val db: FirebaseFirestore = FirebaseFirestore.getInstance()
-
-        if (auth.currentUser != null) {
-            userID = FirebaseAuth.getInstance().currentUser!!.uid
-            documentReference = db.collection("usuarios").document(userID)
-            documentReference.addSnapshotListener { documentSnapshot, error ->
-                runOnUiThread {
-                    if (error != null) {
-                        Toast.makeText(this, "Falha na autenticação", Toast.LENGTH_SHORT).show()
-                    }
-
-                    if (documentSnapshot != null && documentSnapshot.exists()) {
-                        // O documento existe, você pode acessar os dados usando documentSnapshot.data
-                        val nome = documentSnapshot.getString("nome")
-                        if (nome != null) {
-                            nome_user = findViewById(R.id.name_user)
-                            nome_user.text = nome
-
-                            // Coloque o código para iniciar a nova Activity aqui, após definir o texto em nome_user
-                            val intent = Intent(this, MainActivity::class.java)
-                            startActivity(intent)
-                            finish()
-
-                        }
-                    }
-
-                    // Finalize a Activity após iniciar a nova Activity e definir o texto em nome_user
-                }
-            }
-        }
     }
 
 }
+
 
 

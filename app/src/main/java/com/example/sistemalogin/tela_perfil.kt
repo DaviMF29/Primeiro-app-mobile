@@ -19,7 +19,7 @@ class tela_perfil : AppCompatActivity() {
             FirebaseAuth.getInstance().signOut()
             val intent = Intent(this, form_login::class.java)
             startActivity(intent)
-
+            FirebaseAuth.getInstance().signOut()
             // Fecha a atividade atual para que o usuário não possa voltar pressionando o botão "Voltar"
             finish()
         }

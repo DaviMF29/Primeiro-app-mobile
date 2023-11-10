@@ -124,7 +124,6 @@ class form_cadastro : AppCompatActivity() {
         usuario["nome"] = nome
         usuario["email"] = email
         // Adicione outros campos do usuário, se necessário
-        // usuario["campo"] = valor
 
         // Obtenha uma referência para o banco de dados Firestore
         val db = FirebaseFirestore.getInstance()

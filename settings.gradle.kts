@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "App_Champions"
+rootProject.name = "sistemalogin"
 include(":app")
  

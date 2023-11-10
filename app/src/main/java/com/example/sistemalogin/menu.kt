@@ -1,17 +1,23 @@
 package com.example.sistemalogin
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sistemalogin.Adapter.AdapterMenu
 import com.example.sistemalogin.model.clubes
 import com.example.sistemalogin.model.opcoes
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -29,6 +35,10 @@ class menu : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+
+    private lateinit var db: FirebaseFirestore
+    private lateinit var userID: String
+    private lateinit var documentReference: DocumentReference
 
     private lateinit var adapter: AdapterMenu
     private lateinit var recyclerView: RecyclerView
@@ -52,7 +62,6 @@ class menu : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_menu, container, false)
-
         val telaPerfil = view.findViewById<TextView>(R.id.ver_perfil)
         telaPerfil.setOnClickListener {
             val intent = Intent(requireContext(), tela_perfil::class.java)
@@ -106,13 +115,44 @@ class menu : Fragment() {
             getString(R.string.Sobre),
             getString(R.string.Comente),
         )
-
-
-
         for (i in img_menu.indices) {
             val opcoes_menu = opcoes(img_menu[i], nome_opcao[i])
             opcoesArrayList.add(opcoes_menu)
         }
     }
+
+
+
+    override fun onStart() {
+        super.onStart()
+        db = FirebaseFirestore.getInstance()
+        val usuarioID = FirebaseAuth.getInstance().currentUser!!.uid
+
+        documentReference = db.collection("usuarios").document(/*insira aqui*/)
+        documentReference.addSnapshotListener { documentSnapshot, _ ->
+            if (documentSnapshot != null && documentSnapshot.exists()) {
+                val nomeUsuario = documentSnapshot.getString("nome")
+                Log.e("TAG",nomeUsuario.toString())
+                if (nomeUsuario != null) {
+                    val nome_user = view?.findViewById<TextView>(R.id.name_user)
+
+                    // Alterar o texto do TextView
+                    nome_user?.text = nomeUsuario
+
+                } else {
+                    Log.e("TAG", "Documento não existe.")
+                    Toast.makeText(context, "Documento não existe.", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Log.e("TAG", "segunda falha.")
+                Toast.makeText(context, "Falha ao obter o documento.", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
+
+
+
 
 }

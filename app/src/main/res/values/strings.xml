@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">App_Champions</string>
+    <string name="sistemalogin">App_Champions</string>
     <string name="entrar">Entrar</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="text_cadastro">Não tem conta? Clique aqui</string>
